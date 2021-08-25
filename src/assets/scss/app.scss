@@ -1,0 +1,36 @@
+@import "fonts";
+@import "variables";
+@import "libs/normalize";
+
+@import "components/header";
+@import "components/button";
+@import "components/categories";
+@import "components/sort";
+@import "components/book-block";
+@import "components/content";
+@import "components/cart";
+
+body {
+  background-color: $background;
+}
+
+.wrapper {
+  width: calc(100vw - 100px);
+  height: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+
+  &--cart {
+    max-width: 820px;
+    margin: 90px auto;
+    .content__title {
+      margin: 0;
+    }
+  }
+}
