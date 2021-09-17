@@ -1,0 +1,36 @@
+{
+    "books": [
+        {
+            "id": 0,
+            "imageUrl": "https://images.pexels.com/photos/1000653/pexels-photo-1000653.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "name": "Alisa in a wonderland",
+            "type": [1],
+            "price": 400,
+            "category": 0
+        },
+        {
+            "id": 1,
+            "imageUrl":  "https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "name": "Tom in a wonderland",
+            "type": [0, 1],
+            "price": 700,
+            "category": 0
+        },
+        {
+        "id": 2,
+        "imageUrl":  "https://images.pexels.com/photos/3631430/pexels-photo-3631430.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "name": "John in a wonderland",
+        "type": [0, 1],
+        "price": 500,
+        "category": 0
+    },
+    {
+        "id": 3,
+        "imageUrl":  "https://images.pexels.com/photos/3631430/pexels-photo-3631430.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "name": "Iven in a wonderland",
+        "type": [0, 1],
+        "price": 800,
+        "category": 0
+    }
+  ]
+}
