@@ -1,26 +1,20 @@
 import React from 'react';
-import {Header} from "./components";
+import {Header, Categories} from "./components";
 
 import './App.scss';
+
 
 function App() {
   return (
     <div className="wrapper">
       <Header/>
-      
      <div className="content">
         <div className="container">
           <div className="content__top">
-            <div className="categories">
-              <ul>
-                <li className="active">Все</li>
-                <li>Сказки</li>
-                <li>Мальчикам</li>
-                <li>Девочкам</li>
-                <li>Энциклопедии</li>
-              </ul>
-            </div>
-            <div className="sort">
+            <Categories
+            onClick={(itemName) => console.log(itemName)}
+             items={["Сказки", "Мальчикам", "Девочкам", "Энциклопедии" ]}/>
+         <div className="sort">
               <div className="sort__label">
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
