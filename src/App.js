@@ -1,6 +1,7 @@
 
 import {Route} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
+import axios from "axios";
 import {Header} from "./components";
 import {Home, Cart} from "./pages";
 
@@ -12,11 +13,14 @@ function App() {
   const [books, setBooks] = useState([]);
 
   useEffect (() => {
-  fetch("http://localhost:3000/db.json").then((response)=> {
-    response.json().then((json)=> {
-      setBooks(json.books);
-    })
-  });
+    axios.get("http://localhost:3000/db.json").then(({data})=> {
+      setBooks(data.books);
+        })
+  // fetch("http://localhost:3000/db.json").then((response)=> {
+  //   response.json().then((json)=> {
+  //     setBooks(json.books);
+  //   });
+  // });
   }, []);
 
   return (

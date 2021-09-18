@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+import classNames from "classnames";
+import PropTypes from "prop-types";
 
-function BookBlock({name, imageUrl, price}) {
-    // const {sctiveType, setActiveType}= useState([0]);
 
-    // const onSelectBookType = (idx)=> {
-    //     setActiveType(idx);
-    // };
+function BookBlock({name, imageUrl, price, types}) {
+    const bookTypes = ["E-Book", "Печатная"];
+    const {activeType, setActiveType}= useState(types[0]);
+
+    const onSelectBookType = (idx) => {
+        setActiveType(idx);
+    };
     
     return (
         <div className="book-block">
@@ -13,12 +17,21 @@ function BookBlock({name, imageUrl, price}) {
         <h4 className="book-block__title">{name}</h4>
         <div className="book-block__selector">
           <ul>
-            <li className="active">E-Book</li>
-            <li>Печатная</li>
+              {bookTypes.map((type, idx)=> (
+                <li
+                 key = {`${name}_${idx}`}
+                onClick={()=> onSelectBookType(idx)}
+                className={classNames({
+                    active: activeType === idx,
+                    disabled: !types.includes(idx)
+                })}>
+                    {type}
+                </li>
+              ))}
           </ul>
         </div>
         <div className="book-block__bottom">
-          <div className={price}>600 ₽</div>
+          <div className="book-block__price">{price} $</div>
           <div className="button button--outline button--add">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -33,5 +46,25 @@ function BookBlock({name, imageUrl, price}) {
    
     )
 }
+
+BookBlock.propTypes = {
+    id: PropTypes.number,
+    name: PropTypes.string,
+    imageUrl: PropTypes.string,
+    price: PropTypes.number,
+    types: PropTypes.arrayOf(PropTypes.number),
+
+
+};
+BookBlock.defaultProps = {
+    id: 0,
+    name: "****",
+    imageUrl: "_____",
+    price: 0,
+    types: [],
+
+
+};
+
 
 export default BookBlock;

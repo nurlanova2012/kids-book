@@ -1,7 +1,7 @@
 import React from 'react';
 import {Categories, Sort, BookBlock} from "../components"
 
-function Home({bookItems, book}) {
+function Home({bookItems}) {
     return (
         <div className="container">
         <div className="content__top">
